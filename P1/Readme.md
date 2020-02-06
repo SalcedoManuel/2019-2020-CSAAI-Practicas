@@ -1,5 +1,3 @@
 # Práctica 1: CV
 
-Hola, esto es un readme :-|
-99
-Leer el text.txt
+Aquí va a estar mi Práctica 1 de la asignatura CSSAI perteneciente a la carrera ISAM de la URJC.
