@@ -1,5 +1,8 @@
 body{
-  background-color: powderblue;
+  background-image: url('papiro.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 Titulo{
   text-align: center;
