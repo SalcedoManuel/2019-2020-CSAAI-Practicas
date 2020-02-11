@@ -4,12 +4,10 @@ body{
   background-attachment: fixed;
   background-size: cover;
 }
-Titulo{
-  text-align: center;
-}
 h1{
-  font-size: 150%;
   text-align: center;
+  margin: 10px;
+  font-size: 250%;
 }
 p{
   color: red;
