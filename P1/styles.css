@@ -4,6 +4,14 @@ body{
   background-attachment: fixed;
   background-size: cover;
 }
+.Direccion{
+  text-align: left;
+  font-style: italic;
+  font-size: 15px;
+}
+#Logos{
+  height: 10px;
+  }
 h1{
   text-align: center;
   margin: 10px;
