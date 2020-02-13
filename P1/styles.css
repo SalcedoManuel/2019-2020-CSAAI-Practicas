@@ -12,10 +12,16 @@ body{
 #Logos{
   height: 10px;
   }
+#ForAca{
+  text-align: left;
+}
 h1{
   text-align: center;
   margin: 10px;
   font-size: 250%;
+}
+h2{
+  text-align: center;
 }
 p{
   color: red;
