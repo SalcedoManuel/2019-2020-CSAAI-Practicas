@@ -9,11 +9,16 @@ body{
   font-style: italic;
   font-size: 15px;
 }
+#LadoIzquierdo{
+  margin-top: 10px;
+  padding-bottom: 250px;
+}
 #Logos{
   height: 10px;
   }
 #ForAca{
   text-align: left;
+  font-style:oblique;
 }
 h1{
   text-align: center;
