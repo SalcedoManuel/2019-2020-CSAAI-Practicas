@@ -1,0 +1,40 @@
+body{
+  background-color: white;
+  background-size: cover;
+}
+.Calculator{
+  background-color: black;
+  text-align: left;
+  margin-left: 50px%;
+  margin-right: 50px%;
+  padding-top: 1px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.cdigito{
+  background-color: black;
+  border-style: none;
+  color: white;
+  text-align: center;
+  width: 25%;
+  height: 20%;
+  font-size: 200%;
+
+}
+#multiplicacion{
+  background-color: black;
+  border-style: none;
+  color: white;
+  text-align: center;
+  width: 20%;
+  height: 20%;
+  font-size: 200%;
+}
+#display{
+  color: white;
+  text-align: right;
+  border-color: rgb(120, 120, 120);
+  border-style: none none solid none;
+  font-size: 400%;
+
+  }
