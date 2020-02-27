@@ -5,11 +5,11 @@ body{
 .Calculator{
   background-color: black;
   text-align: left;
-  margin-left: 50px%;
-  margin-right: 50px%;
-  padding-top: 1px;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
 }
 .cdigito{
   background-color: black;
@@ -17,24 +17,23 @@ body{
   color: white;
   text-align: center;
   width: 25%;
-  height: 20%;
-  font-size: 200%;
-
+  height: 25%;
+  font-size: 600%;
 }
-#multiplicacion{
-  background-color: black;
-  border-style: none;
-  color: white;
-  text-align: center;
+#producto, #resta, #suma, #division, #igual{
+  color: orange;
   width: 20%;
-  height: 20%;
-  font-size: 200%;
+}
+#clear, #Del, #porcentaje{
+  color: orange;
 }
 #display{
+  font-family: Arial;
   color: white;
-  text-align: right;
+  text-align:right;
   border-color: rgb(120, 120, 120);
   border-style: none none solid none;
-  font-size: 400%;
-
-  }
+  font-size: 500%;
+  padding-right: 12%;
+  padding-top: 2%;
+}
