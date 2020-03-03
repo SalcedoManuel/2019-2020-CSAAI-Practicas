@@ -1,0 +1,39 @@
+body{
+  background-color: gray;
+  background-size: cover;
+}
+.Calculator{
+  background-color: black;
+  text-align: left;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+}
+.cdigito{
+  background-color: black;
+  border-style: none;
+  color: white;
+  text-align: center;
+  width: 25%;
+  height: 25%;
+  font-size: 200%;
+}
+#producto, #resta, #suma, #division, #igual{
+  color: orange;
+  width: 20%;
+}
+#clear, #del, #exponencial{
+  color: orange;
+}
+#display{
+  font-family: Arial;
+  color: white;
+  text-align:right;
+  border-color: rgb(120, 120, 120);
+  border-style: none none solid none;
+  font-size: 500%;
+  padding-right: 12%;
+  padding-top: 2%;
+}
