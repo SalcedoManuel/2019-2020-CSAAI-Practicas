@@ -1,5 +1,5 @@
 body{
-  background-color: white;
+  background-color: gray;
   background-size: cover;
 }
 .Calculator{
@@ -18,13 +18,13 @@ body{
   text-align: center;
   width: 25%;
   height: 25%;
-  font-size: 600%;
+  font-size: 200%;
 }
 #producto, #resta, #suma, #division, #igual{
   color: orange;
   width: 20%;
 }
-#clear, #Del, #porcentaje{
+#clear, #del, #exponencial{
   color: orange;
 }
 #display{

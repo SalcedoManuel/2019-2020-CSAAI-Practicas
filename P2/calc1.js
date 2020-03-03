@@ -1,14 +1,14 @@
 
 display = document.getElementById("display")
-result = document.getElementById("display")
 suma = document.getElementById("suma")
 resta = document.getElementById("resta")
 producto = document.getElementById("producto")
 division = document.getElementById("division")
 decimal = document.getElementById("decimal")
+exponencial = document.getElementById("exponencial")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
-borrar = document.getElementById("Del")
+borrar = document.getElementById("del")
 
 let digitos = document.getElementsByClassName("cdigito");
 for (var i = 0; i < digitos.length; i++) {
@@ -45,32 +45,25 @@ producto.onclick = () => {
 division.onclick = () =>{
   display.innerHTML += "/";
 }
-porcentaje.onclick = () =>{
-  display.innerHTML += "%";
+exponencial.onclick = () =>{
+  display.innerHTML += "**";
 }
+
+decimal.onclick = () =>{
+  display.innerHTML += ".";
+}
+
 clear.onclick = () => {
   display.innerHTML = "0";
 }
 borrar.onclick = () =>{
-  console.log("Numero:");
-  console.log(display.innerHTML);
-  result.innerHTML = display.innerHTML;
-  console.log("Cifras Bucle");
-  var max = result.innerHTML.legth;
-  console.log(max);
-  for (var i = 0; i < 3; i++) {
-    display.innerHTML[i];
-    result.innerHTML;
-    display.innerHTML =+ result.innerHTML[i];
-      console.log("Valor de i: ");
-      console.log(i);
-      console.log("Numero Cifras Bucle: ");
-      console.log(result.innerHTML.length);
+  var length = display.innerHTML.length;
+  //display.innerHTML = "0";
+  if (display.innerHTML.length > 1) {
+    display.innerHTML = display.innerHTML.slice(0,display.innerHTML.length - 1);
+  }else if (display.innerHTML.length = 1) {
+    display.innerHTML = "0";
   }
-  console.log("Numero Cifras: ");
-  console.log(result.innerHTML.length);
-  console.log("Nuevo Numero:");
-  console.log(result.innerHTML);
 }
 
 igual.onclick = () =>{
