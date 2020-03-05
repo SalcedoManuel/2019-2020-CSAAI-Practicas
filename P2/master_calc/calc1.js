@@ -9,51 +9,100 @@ exponencial = document.getElementById("exponencial")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 borrar = document.getElementById("del")
+binary = document.getElementById("binary")
+dec2 = document.getElementById("dec")
+negative = document.getElementById("Negative")
+abs = document.getElementById("absolute")
+par1 = document.getElementById("par1")
+par2 = document.getElementById("par2")
+var oper_act = true;
+var not_oper = true;
+let n_par1 = 0;
+let n_par2 = 0;
 
 let digitos = document.getElementsByClassName("cdigito");
 for (var i = 0; i < digitos.length; i++) {
   digitos[i].onclick = (ev)=>{
+    oper_act = false;
     digito(ev.target);
   }
 };
-function digito(boton)
-{
-  if (display.innerHTML=="0") {
-    display.innerHTML = boton.value;
+function digito(boton){
+  if ((boton.value == "(")) {
+    not_oper = false;
+    n_par1 =+ 1;
+  }else if ((boton.value == ")")) {
+      not_oper = false;
+      n_par2 =+ 1;
   }else {
-    display.innerHTML += boton.value;
+    not_oper = false;
+  }
+  console.log(n_par2);
+  console.log(n_par1);
+  if (n_par2 <= n_par1) {
+    if (display.innerHTML=="0") {
+      display.innerHTML = boton.value;
+    }else {
+      display.innerHTML += boton.value;
+    }
+  }else {
+    n_par2 = n_par2 - 1;
+  }
+  if ((boton.value == "(")) {
+    oper_act = true;
+    not_oper = true;
   }
 }
-//-- Insertar decimal
+
 
 //-- Insertar simbolo de sumar
 suma.onclick = () => {
-  display.innerHTML += "+";
+  if (!oper_act) {
+      display.innerHTML += "+";
+      oper_act = true;
+    }
 }
 
 //-- Insertar simbolo de restar
 resta.onclick = () => {
-  display.innerHTML += "-";
+  if (!oper_act) {
+      display.innerHTML += "-";
+      oper_act = true;
+    }
 }
 
 //--Insertar simbolo multiplicacion
 producto.onclick = () => {
-  display.innerHTML += "*";
+  if (!oper_act) {
+      display.innerHTML += "*";
+      oper_act = true;
+    }
 }
 
 //--Insertar simbolo de división
 division.onclick = () =>{
-  display.innerHTML += "/";
+  if (!oper_act) {
+      display.innerHTML += "/";
+      oper_act = true;
+    }
 }
 exponencial.onclick = () =>{
-  display.innerHTML += "**";
+  if (!oper_act) {
+      display.innerHTML += "**";
+      oper_act = true;
+    }
 }
 
 decimal.onclick = () =>{
-  display.innerHTML += ".";
+  if (!oper_act) {
+      display.innerHTML += ".";
+      oper_act = true;
+    }
 }
 
 clear.onclick = () => {
+  n_par1 = 0;
+  n_par2 = 0;
   display.innerHTML = "0";
 }
 borrar.onclick = () =>{
@@ -66,6 +115,23 @@ borrar.onclick = () =>{
   }
 }
 
+negative.onclick =() =>{
+  display.innerHTML = display.innerHTML * (-1);
+}
+abs.onclick = () =>{
+  if (display.innerHTML < 0) {
+    display.innerHTML = display.innerHTML * (-1);
+  }else {
+    display.innerHTML = display.innerHTML;
+  }
+}
+
 igual.onclick = () =>{
-  display.innerHTML = eval(display.innerHTML);
+  console.log(n_par1);
+  console.log(n_par2);
+  if (n_par1 == n_par2) {
+    n_par1 = 0;
+    n_par2 = 0;
+    display.innerHTML = eval(display.innerHTML);
+  }
 }
