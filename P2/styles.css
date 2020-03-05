@@ -28,6 +28,9 @@ body{
 #clear, #del, #exponencial{
   color: orange;
 }
+#link{
+  color: green;
+}
 #display{
   font-family: Arial;
   color: white;
