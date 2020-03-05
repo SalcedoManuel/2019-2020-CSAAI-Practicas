@@ -6,7 +6,7 @@ body{
   width: 350px;
   background-color: black;
   text-align: left;
-  margin-left: 40%;
+  margin-left: 35%;
   margin-right: 40%;
   padding-left: 2%;
   padding-right: 2%;
@@ -34,7 +34,7 @@ body{
   text-align:right;
   border-color: rgb(120, 120, 120);
   border-style: none none solid none;
-  font-size: 500%;
+  font-size: 300%;
   padding-right: 12%;
   padding-top: 2%;
 }
