@@ -56,6 +56,9 @@ decimal.onclick = () =>{
 clear.onclick = () => {
   display.innerHTML = "0";
 }
+link.onclick = () => {
+  display.innerHTML = "0";
+}
 borrar.onclick = () =>{
   var length = display.innerHTML.length;
   //display.innerHTML = "0";
