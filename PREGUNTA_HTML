@@ -1,0 +1,8 @@
+Pregunta examen:
+Si pedimos http://www.miservidor.com/index.html
+¿Cuántas peticiones HTTP se hacen al servidor?
+1º Le pides tu index HTML y te lo trae.
+2º El fichero pide el .css porque es el primer fichero que aparece en el fichero index
+3º Dame el fichero mi_js.js
+4º El index pide el logo al servidor.
+5º El index no pide los enlaces que son las etiquetas de tipo <a>
