@@ -13,6 +13,8 @@ const ctx = canvas.getContext("2d");
 //--Variables para la Bola
 let bola_x = 50;
 let bola_vx = 0;
+let raqI_y = 100;
+let raqI_v = 0;
 
 //-- Pintar todos los objetos en el canvas
 function draw() {
@@ -26,7 +28,7 @@ function draw() {
   ctx.beginPath();
   ctx.fillStyle='white';
   //--Raqueta Izquierda
-  ctx.rect(50, 100, 10, 40);
+  ctx.rect(50, raqI_y, 10, 40);
   //--Raqueta Derecha
   ctx.rect(550,300,10,40);
   ctx.fill();
@@ -61,6 +63,8 @@ function animacion()
   }
   //-- Incrementar la posicion x de la bola
   bola_x += bola_vx;
+  //-- Incrementar la posicion de la raqueta.
+  raqI_y += raqI_v;
   //--Borrar el canvas
   ctx.clearRect(0,0, canvas.width, canvas.height);
 
@@ -87,6 +91,9 @@ window.onkeydown = (e) => {
   switch (e.key) {
     case "a":
       raqI_v = 3;
+      break;
+    case "q":
+      raqI_v = -3;
       break;
     case " ":
     bola_x = 50;
