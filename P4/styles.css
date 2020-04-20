@@ -1,0 +1,13 @@
+body{
+  background-color: white;
+}
+.Boton{
+  color: white;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  background-color: black;
+  margin-left: 40px;
+  margin-right: 50px;
+}
