@@ -1,6 +1,22 @@
 body {
   background-color: grey;
 }
-#imagesrc {
-  display:none;
+
+#canvas{
+  width: 600px;
+  height: 300px;
+
+}
+#red,#green,#blue{
+  text-align: left;
+}
+.image{
+  width: 200px;
+  height: 100px;
+}
+#image3{
+  width:200px;
+}
+imgData{
+  width: 100px;
 }
