@@ -121,9 +121,7 @@ image2.onclick = () => {
 }
 image3.onclick = () => {
     img = document.getElementById('image3');
-    console.log(canvas.height);
     img.height = canvas.height;
-    console.log(img.height);
     ctx.drawImage(img, 0,0);
 }
 console.log("Fin...");
