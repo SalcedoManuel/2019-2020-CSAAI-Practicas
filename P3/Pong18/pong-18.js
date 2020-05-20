@@ -57,7 +57,7 @@ function draw() {
   ctx.font = "100px Arial";
   ctx.fillStyle = "white";
   ctx.fillText("0", 200, 80);
-  ctx.fillText("1", 340, 80);
+  ctx.fillText("0", 340, 80);
 
   //-- Dibujar el texto de sacar
   if (estado == ESTADO.SAQUE) {
@@ -113,6 +113,9 @@ function animacion()
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
+  }else if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
+            bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
+
   }
 
   //-- Actualizar coordenada x de la bola, en funcion de
