@@ -14,6 +14,10 @@ const ctx = canvas.getContext("2d");
 const sonido_raqueta = new Audio("pong-raqueta.mp3");
 const sonido_rebote = new Audio("pong-rebote.mp3");
 
+let count_player_1 = 0;
+let count_player_2 = 0;
+let count = true;
+
 //-- Estados del juego
 const ESTADO = {
   INIT: 0,
@@ -56,8 +60,8 @@ function draw() {
   //------ Dibujar el tanteo
   ctx.font = "100px Arial";
   ctx.fillStyle = "white";
-  ctx.fillText("0", 200, 80);
-  ctx.fillText("0", 340, 80);
+  ctx.fillText(count_player_1, 200, 80);
+  ctx.fillText(count_player_2, 340, 80);
 
   //-- Dibujar el texto de sacar
   if (estado == ESTADO.SAQUE) {
@@ -77,7 +81,6 @@ function draw() {
 //---- Bucle principal de la animación
 function animacion()
 {
-
   //-- Actualizar las posiciones de los objetos móviles
 
   //-- Actualizar la raqueta con la velocidad actual
@@ -104,24 +107,41 @@ function animacion()
 
   //-- Si llega al límite izquierdo, hemos perdido
   //-- pasamos al estado de SAQUE
+  console.log(count);
   if (bola.x <= bola.size) {
      estado = ESTADO.SAQUE;
+     if (count) {
+       count_player_1 += 1;
+       count = false;
+     }
      bola.init();
      console.log("Tanto!!!!");
      return;
+  }else if (bola.x >= (canvas.width - bola.size)) {
+    estado = ESTADO.SAQUE;
+    if (count) {
+      count_player_2 += 1;
+      count = false;
+    }
+    console.log(count_player_2);
+    bola.init();
+    console.log("Tanto!!!!");
+    return;
   }
 
   //-- Comprobar si hay colisión con la raqueta izquierda
   if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
     bola.vx = bola.vx * -1;
-
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
   }else if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
             bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
     bola.vx = bola.vx * -1;
+    //-- Reproducir sonido
+    sonido_raqueta.currentTime = 0;
+    sonido_raqueta.play();
   }
 
   //-- Actualizar coordenada x de la bola, en funcion de
@@ -190,7 +210,7 @@ window.onkeydown = (e) => {
 
         //-- Cambiar al estado de jugando!
         estado = ESTADO.JUGANDO;
-
+        count = true;
         return false;
       }
     default:
