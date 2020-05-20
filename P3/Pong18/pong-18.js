@@ -88,9 +88,15 @@ function animacion()
   //-- Comprobar si la bola ha alcanzado el límite derecho
   //-- Si es así, se cambia de signo la velocidad, para
   // que "rebote" y vaya en el sentido opuesto
-  if (bola.x >= canvas.width) {
+  if ((bola.x >= canvas.width)||(bola.x <= 0)) {
     //-- Hay colisión. Cambiar el signo de la bola
     bola.vx = bola.vx * -1;
+    //-- Reproducir sonido
+    sonido_rebote.currentTime = 0;
+    sonido_rebote.play();
+  }else if ((bola.y >= canvas.height)||(bola.y<=0)) {
+    //-- Hay colisión. Cambiar el signo de la bola
+    bola.vy = bola.vy * -1;
     //-- Reproducir sonido
     sonido_rebote.currentTime = 0;
     sonido_rebote.play();
@@ -115,7 +121,7 @@ function animacion()
     sonido_raqueta.play();
   }else if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
             bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
-
+    bola.vx = bola.vx * -1;
   }
 
   //-- Actualizar coordenada x de la bola, en funcion de
@@ -180,6 +186,7 @@ window.onkeydown = (e) => {
 
         //-- Darle velocidad
         bola.vx = bola.vx_ini;
+        bola.vy = bola.vy_ini;
 
         //-- Cambiar al estado de jugando!
         estado = ESTADO.JUGANDO;
