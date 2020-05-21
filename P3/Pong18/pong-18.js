@@ -18,6 +18,8 @@ let count_player_1 = 0;
 let count_player_2 = 0;
 let count = true;
 
+let player2 = false;
+
 //-- Estados del juego
 const ESTADO = {
   INIT: 0,
@@ -61,20 +63,20 @@ function draw() {
   ctx.font = "100px Arial";
   ctx.fillStyle = "white";
   ctx.fillText(count_player_1, 200, 80);
-  ctx.fillText(count_player_2, 340, 80);
+  ctx.fillText(count_player_2, 750, 80);
 
   //-- Dibujar el texto de sacar
   if (estado == ESTADO.SAQUE) {
     ctx.font = "40px Arial";
     ctx.fillStyle = "yellow";
-    ctx.fillText("Saca!", 30, 350);
+    ctx.fillText("Saca!", 50, 500);
   }
 
   //-- Dibujar el texto de comenzar
   if (estado == ESTADO.INIT) {
     ctx.font = "40px Arial";
     ctx.fillStyle = "green";
-    ctx.fillText("Pulsa Start!", 30, 350);
+    ctx.fillText("Pulsa Start!", 50, 500);
   }
 }
 
@@ -86,7 +88,6 @@ function animacion()
   //-- Actualizar la raqueta con la velocidad actual
   raqI.update();
   raqD.update();
-
 
   //-- Comprobar si la bola ha alcanzado el límite derecho
   //-- Si es así, se cambia de signo la velocidad, para
@@ -113,6 +114,7 @@ function animacion()
      if (count) {
        count_player_1 += 1;
        count = false;
+       bola.x = 500;
      }
      bola.init();
      console.log("Tanto!!!!");
@@ -122,6 +124,7 @@ function animacion()
     if (count) {
       count_player_2 += 1;
       count = false;
+      bola.x = 500;
     }
     console.log(count_player_2);
     bola.init();
@@ -148,6 +151,7 @@ function animacion()
   //-- su velocidad
   bola.update()
 
+
   //-- Borrar la pantalla
   ctx.clearRect(0,0, canvas.width, canvas.height);
 
@@ -163,10 +167,9 @@ const raqI = new Raqueta(ctx);
 const raqD = new Raqueta(ctx);
 
 //-- Cambiar las coordenadas de la raqueta derecha
-raqD.x_ini = 540;
+raqD.x_ini = 940;
 raqD.y_ini = 300;
 raqD.init();
-
 //-- Arrancar la animación
 setInterval(()=>{
   animacion();
@@ -188,10 +191,15 @@ window.onkeydown = (e) => {
       raqI.v = raqI.v_ini * -1;
       break;
     case "p":
-      raqD.v = raqD.v_ini * -1;
+      if (player2) {
+          raqD.v = raqD.v_ini * -1;
+      }
       break;
     case "l":
-      raqD.v = raqD.v_ini;
+      if (player2) {
+        console.log(player2);
+        raqD.v = raqD.v_ini;
+      }
       break;
     case "s":
 
@@ -246,4 +254,13 @@ stop.onclick = () => {
   estado = ESTADO.INIT;
   bola.init();
   start.disabled = false;
+}
+const second_player = document.getElementById("second_player");
+
+second_player.onclick = () => {
+  if (player2) {
+    player2 = false;
+  }else {
+    player2 = true;
+  }
 }

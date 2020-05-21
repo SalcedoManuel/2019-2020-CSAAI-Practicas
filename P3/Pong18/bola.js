@@ -4,11 +4,11 @@ class Bola {
     this.ctx = ctx;
 
     //-- Constante: Tamaño de la bola
-    this.size = 5;
+    this.size = 8;
 
     //-- Contante: Posicion inicial de la bola
     this.x_ini = 100;
-    this.y_ini = 200;
+    this.y_ini = 500;
 
     //-- Posicion generica de la bola
     this.x = 0;
