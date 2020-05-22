@@ -87,8 +87,11 @@ function animacion()
 
   //-- Actualizar la raqueta con la velocidad actual
   raqI.update();
+  if (!player2) {
+    raqD.y = bola.y;
+    console.log(bola.y);
+  }
   raqD.update();
-
   //-- Comprobar si la bola ha alcanzado el límite derecho
   //-- Si es así, se cambia de signo la velocidad, para
   // que "rebote" y vaya en el sentido opuesto
@@ -108,13 +111,13 @@ function animacion()
 
   //-- Si llega al límite izquierdo, hemos perdido
   //-- pasamos al estado de SAQUE
-  console.log(count);
   if (bola.x <= bola.size) {
      estado = ESTADO.SAQUE;
      if (count) {
        count_player_1 += 1;
        count = false;
        bola.x = 500;
+       bola.y = 300;
      }
      bola.init();
      console.log("Tanto!!!!");
@@ -125,23 +128,21 @@ function animacion()
       count_player_2 += 1;
       count = false;
       bola.x = 500;
+      bola.y = 300;
+      console.log(bola.y);
     }
-    console.log(count_player_2);
     bola.init();
     console.log("Tanto!!!!");
     return;
   }
 
   //-- Comprobar si hay colisión con la raqueta izquierda
-  if (bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
-      bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) {
-    bola.vx = bola.vx * -1;
-    //-- Reproducir sonido
-    sonido_raqueta.currentTime = 0;
-    sonido_raqueta.play();
-  }else if (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
-            bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
-    bola.vx = bola.vx * -1;
+  if ((bola.x >= raqI.x && bola.x <=(raqI.x + raqI.width) &&
+       bola.y >= raqI.y && bola.y <=(raqI.y + raqI.height)) ||
+      (bola.x >= raqD.x && bola.x <=(raqD.x + raqD.width) &&
+       bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height))) {
+    //Cambiamos la velocidad de la bola.
+    bola.vx *= -1;
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
@@ -197,7 +198,6 @@ window.onkeydown = (e) => {
       break;
     case "l":
       if (player2) {
-        console.log(player2);
         raqD.v = raqD.v_ini;
       }
       break;

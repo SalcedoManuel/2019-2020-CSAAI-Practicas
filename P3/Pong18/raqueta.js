@@ -36,7 +36,6 @@ class Raqueta
   {
     this.y += this.v;
   }
-
   //-- Dibujar la raqueta
   draw()
   {
