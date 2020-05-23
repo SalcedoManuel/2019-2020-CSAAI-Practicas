@@ -69,14 +69,14 @@ function draw() {
   if (estado == ESTADO.SAQUE) {
     ctx.font = "40px Arial";
     ctx.fillStyle = "yellow";
-    ctx.fillText("Saca!", 50, 500);
+    ctx.fillText("Saca!", 80, 500);
   }
 
   //-- Dibujar el texto de comenzar
   if (estado == ESTADO.INIT) {
     ctx.font = "40px Arial";
     ctx.fillStyle = "green";
-    ctx.fillText("Pulsa Start!", 50, 500);
+    ctx.fillText("Pulsa Start!", 80, 500);
   }
 }
 
@@ -87,9 +87,10 @@ function animacion()
 
   //-- Actualizar la raqueta con la velocidad actual
   raqI.update();
-  if (!player2) {
-    raqD.y = bola.y;
-    console.log(bola.y);
+  if ((!player2)){
+    if (count) {
+      raqD.y = bola.y;
+    }
   }
   raqD.update();
   //-- Comprobar si la bola ha alcanzado el límite derecho
@@ -146,12 +147,11 @@ function animacion()
     //-- Reproducir sonido
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
-  }
-
+    }
   //-- Actualizar coordenada x de la bola, en funcion de
   //-- su velocidad
   bola.update()
-
+  console.log(bola.vy);
 
   //-- Borrar la pantalla
   ctx.clearRect(0,0, canvas.width, canvas.height);

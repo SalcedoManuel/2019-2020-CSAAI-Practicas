@@ -19,7 +19,10 @@ class Raqueta
 
     //-- Velocidad (variable)
     this.v = 0;
-
+    //-- Posicion cuando golpea la otra pala.
+    this.pos_y = 300;
+    //-- Combo que se activa cuando la otra pala golpea.
+    this.combo_vy = 1;
     //-- Inicializar la raqueta a su posicion inicial
     this.init();
   }
@@ -36,6 +39,7 @@ class Raqueta
   {
     this.y += this.v;
   }
+
   //-- Dibujar la raqueta
   draw()
   {
