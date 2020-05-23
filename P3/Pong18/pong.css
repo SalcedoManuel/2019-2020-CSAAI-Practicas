@@ -1,5 +1,5 @@
 body{
-  background-color: lightblue;
+  background-image: url("space_background.jpg");
   align-content: center;
 }
 #canvas {
