@@ -7,15 +7,16 @@ class Bola {
     this.size = 8;
 
     //-- Contante: Posicion inicial de la bola
-    this.x_ini = 100;
-    this.y_ini = 500;
+    this.x_ini = 55;
+    this.y_ini = 300;
+
 
     //-- Posicion generica de la bola
     this.x = 0;
     this.y = 0;
 
     //-- Velocidad inicial de la bola
-    this.vx_ini = 5;
+    this.vx_ini = 6;
     this.vy_ini = 3;
 
     //-- Velocidad genérica de la bola

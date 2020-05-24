@@ -23,7 +23,7 @@ let player2 = false;
 const player_one = document.getElementById('Player_One');
 const player_two = document.getElementById('Player_Two');
 
-const goal_player1 = true;
+let goal_player1 = true;
 
 //-- Estados del juego
 const ESTADO = {
@@ -47,7 +47,7 @@ function draw() {
   //-- Dibujar las raquetas
   raqI.draw();
   raqD.draw();
-
+  raqD.v_ini = 2.9;
   //--------- Dibujar la red
   ctx.beginPath();
 
@@ -67,8 +67,8 @@ function draw() {
   //------ Dibujar el tanteo
   ctx.font = "100px Arial";
   ctx.fillStyle = "white";
-  ctx.fillText(count_player_1, 200, 80);
-  ctx.fillText(count_player_2, 725, 80);
+  ctx.fillText(count_player_2, 200, 80);
+  ctx.fillText(count_player_1, 725, 80);
 
   //-- Dibujar el texto de sacar
   if (estado == ESTADO.SAQUE) {
@@ -94,7 +94,7 @@ function animacion(){
   if ((!player2)){
     if (count) {
       if (estado == ESTADO.JUGANDO) {
-        if (raqD.y < bola.y) {
+        if ((raqD.y + 25) < bola.y) {
           raqD.y += raqD.v_ini;
         }else {
           raqD.y -= raqD.v_ini;
@@ -127,8 +127,7 @@ function animacion(){
      if (count) {
        count_player_1 += 1;
        count = false;
-       bola.x = 500;
-       bola.y = 300;
+       goal_player1 = true;
      }
      bola.init();
      console.log("Tanto!!!!");
@@ -138,10 +137,10 @@ function animacion(){
     if (count) {
       count_player_2 += 1;
       count = false;
-      bola.x = 500;
-      bola.y = 300;
-      console.log(bola.y);
+      goal_player1 = false;
     }
+    bola.x = 300;
+    bola.y = 300;
     bola.init();
     console.log("Tanto!!!!");
     return;
@@ -155,13 +154,14 @@ function animacion(){
     //Cambiamos la velocidad de la bola.
     bola.vx *= -1;
     //-- Reproducir sonido
+    if (estado == ESTADO.JUGANDO) {
     sonido_raqueta.currentTime = 0;
     sonido_raqueta.play();
     }
+    }
   //-- Actualizar coordenada x de la bola, en funcion de
   //-- su velocidad
-  bola.update()
-  console.log(bola.vy);
+  bola.update();
 
   //-- Borrar la pantalla
   ctx.clearRect(0,0, canvas.width, canvas.height);
@@ -218,7 +218,14 @@ window.onkeydown = (e) => {
         //-- Reproducir sonido
         sonido_raqueta.currentTime = 0;
         sonido_raqueta.play();
-
+        if (goal_player1) {
+          bola.x_ini = raqI.x + 20;
+          bola.y_ini = raqI.y + 10;
+        }else {
+          bola.x_ini = raqD.x - 20;
+          bola.y_ini = raqD.y + 10;
+        }
+        console.log(bola.y);
         //-- Llevar bola a su posicion incicial
         bola.init();
 

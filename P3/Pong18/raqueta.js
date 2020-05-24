@@ -15,7 +15,7 @@ class Raqueta
     this.y_ini = 100;
 
     //-- Constante: Velocidad
-    this.v_ini = 6;
+    this.v_ini = 3;
 
     //-- Velocidad (variable)
     this.v = 0;
