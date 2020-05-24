@@ -1,13 +1,23 @@
 body{
-  background-image: url("space_background.jpg");
-  align-content: center;
+  background-image: url("europe_background.jpg");
+  background-repeat: repeat-x;
+  background-position: top;
 }
+#LadoIzquierdo,#LadoDerecho{
+  background-image: url(papiro.jpg);
+  text-align: center;
+}
+#start,#stop,#second_player{
+  background-image: url(marmol.jpg);
+}
+
 #canvas {
   background-color: black;
-  align-content: center;
-  align-items: center;
-  align-self: center;
 }
 h1{
+  text-align: center;
+  background-color: white;
+}
+h2{
   text-align: center;
 }
