@@ -1,5 +1,22 @@
 body{
+  background-image: url('descarga.jpg');
+  background-size:cover;
+}
+h1{
   background-color: white;
+}
+#video0{
+  margin-left: 30%;
+}
+#video1,#video2,#video3{
+  margin-left: 10%
+}
+#title{
+  margin-left: 280px;
+  margin-right: 10px;
+  background-color: white;
+  text-align: center;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .Boton{
   color: white;
@@ -8,6 +25,6 @@ body{
   cursor: pointer;
   display: inline-block;
   background-color: black;
-  margin-left: 40px;
-  margin-right: 50px;
+  margin-left: 350px;
+  margin-right: 120px;
 }
