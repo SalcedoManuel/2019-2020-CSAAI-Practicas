@@ -6,35 +6,47 @@
     <script src="bola.js"></script>
     <script src="raqueta.js"></script>
     <script src="pong-18.js" defer></script>
-    <title>Pong 18</title>
+    <title>RomePong</title>
   </head>
   <body>
     <table>
       <tr>
-        <th style="width: 220px"></th>
-        <th style="width: 1000px"><h1>PONG!</h1></th>
-        <tr></tr>
+        <th ><img src="cabecera_edit7.jpg" alt="RomePong" class="title"> </th>
       </tr>
+    </table>
+    <table>
       <tr>
-        <th id="LadoIzquierdo"style="width: 15%">
+        <th style="width:220px"></th>
+        <th><h3 id="Player_One">Carthago</h3></th>
+        <th><h3 id="Player_Two">Carthago</h3></th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th id="LadoIzquierdo" style="width:15%">
           <h2>EQUIPOS</h2>
           <h2>Imperio Romano</h2>
-          <br>
-
+          <button><img id="teams1_rome" src="rome.jpg"></button>
+          <button><img id="teams2_rome" src="rome.jpg"></button>
+          <p>Jugador 1 ------ Jugador 2 </p>
           <h2>República Cartaginés</h2>
-          <br>
+          <button><img id="teams1_carthago" src="carthago.png"></button>
+          <button><img id="teams2_carthago" src="carthago.png"></button>
+          <p>Jugador 1 ------ Jugador 2 </p>
           <h2>Reino de Egipto</h2>
+          <button><img id="teams1_egipto" src="egipto.jpg"></button>
+          <button><img id="teams2_egipto" src="egipto.jpg"></button>
+          <p>Jugador 1 ------ Jugador 2 </p>
         </th>
         <th id="Canvas_Zone">
           <canvas id="canvas" width="1000" height = "600"></canvas>
         </th>
-        <th id="LadoDerecho">
+        <th id="LadoDerecho" style="margin-left: 15px">
           <h2>INSTRUCCIONES</h2>
-          <p>Para comenzar pulse "Start": </p>
-          <button id="start">Start</button>
-          <p>Para parar pulse "Stop":</p>
-          <button id="stop">Stop</button>
-          <p>Si desean jugar 2 jugadores pulse "Jugador 2"</p>
+          <p>Para comenzar pulse "Start": <button id="start">Start</button> </p>
+          <p>Para parar pulse "Stop": <button id="stop">Stop</button></p>
+
+          <p>Si desean jugar 2 jugadores pulse "Jugador 2": </p>
           <button id="second_player">Jugador 2</button>
           <p>Pulsar la tecla "S" para sacar</p>
           <h2>MANUAL</h2>

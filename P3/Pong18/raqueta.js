@@ -23,6 +23,8 @@ class Raqueta
     this.pos_y = 300;
     //-- Combo que se activa cuando la otra pala golpea.
     this.combo_vy = 1;
+    //Equipo de la pala
+    this.team = "Carthago";
     //-- Inicializar la raqueta a su posicion inicial
     this.init();
   }
@@ -45,7 +47,14 @@ class Raqueta
   {
     //------- Dibujar las raquetas
     this.ctx.beginPath();
-    this.ctx.fillStyle='white';
+    if (this.team == "Rome") {
+      this.ctx.fillStyle='red';
+    }else if (this.team == "Egipt") {
+      this.ctx.fillStyle='blue';
+    }else {
+      this.ctx.fillStyle='white';
+    }
+
 
     //-- Raqueta izquierda
     this.ctx.rect(this.x, this.y, this.width, this.height);

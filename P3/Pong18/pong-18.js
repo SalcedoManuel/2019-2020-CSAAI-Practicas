@@ -20,6 +20,9 @@ let count = true;
 
 let player2 = false;
 
+const player_one = document.getElementById('Player_One');
+const player_two = document.getElementById('Player_Two');
+
 //-- Estados del juego
 const ESTADO = {
   INIT: 0,
@@ -63,7 +66,7 @@ function draw() {
   ctx.font = "100px Arial";
   ctx.fillStyle = "white";
   ctx.fillText(count_player_1, 200, 80);
-  ctx.fillText(count_player_2, 750, 80);
+  ctx.fillText(count_player_2, 725, 80);
 
   //-- Dibujar el texto de sacar
   if (estado == ESTADO.SAQUE) {
@@ -81,8 +84,7 @@ function draw() {
 }
 
 //---- Bucle principal de la animación
-function animacion()
-{
+function animacion(){
   //-- Actualizar las posiciones de los objetos móviles
 
   //-- Actualizar la raqueta con la velocidad actual
@@ -263,4 +265,37 @@ second_player.onclick = () => {
   }else {
     player2 = true;
   }
+}
+
+const team_Player1_Rome = document.getElementById("teams1_rome");
+team_Player1_Rome.onclick = () =>{
+  raqI.team = "Rome";
+  player_one.innerHTML = raqI.team;
+}
+const team_Player1_Carthago = document.getElementById("teams1_carthago");
+team_Player1_Carthago.onclick = () =>{
+  raqI.team = "Carthago";
+  player_one.innerHTML = raqI.team;
+}
+const team_Player1_Egipt = document.getElementById("teams1_egipto");
+team_Player1_Egipt.onclick = () =>{
+  raqI.team = "Egipt";
+  player_one.innerHTML = raqI.team;
+
+}
+
+const team_Player2_Rome = document.getElementById("teams2_rome");
+team_Player2_Rome.onclick = () =>{
+  raqD.team = "Rome";
+  player_two.innerHTML = raqD.team;
+}
+const team_Player2_Carthago = document.getElementById("teams2_carthago");
+team_Player2_Carthago.onclick = () =>{
+  raqD.team = "Carthago";
+  player_two.innerHTML = raqD.team;
+}
+const team_Player2_Egipt = document.getElementById("teams2_egipto");
+team_Player2_Egipt.onclick = () =>{
+  raqD.team = "Egipt";
+  player_two.innerHTML = raqD.team;
 }
