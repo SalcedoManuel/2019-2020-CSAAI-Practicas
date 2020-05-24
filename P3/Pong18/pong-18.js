@@ -23,6 +23,8 @@ let player2 = false;
 const player_one = document.getElementById('Player_One');
 const player_two = document.getElementById('Player_Two');
 
+const goal_player1 = true;
+
 //-- Estados del juego
 const ESTADO = {
   INIT: 0,
@@ -91,7 +93,13 @@ function animacion(){
   raqI.update();
   if ((!player2)){
     if (count) {
-      raqD.y = bola.y;
+      if (estado == ESTADO.JUGANDO) {
+        if (raqD.y < bola.y) {
+          raqD.y += raqD.v_ini;
+        }else {
+          raqD.y -= raqD.v_ini;
+        }
+      }
     }
   }
   raqD.update();
