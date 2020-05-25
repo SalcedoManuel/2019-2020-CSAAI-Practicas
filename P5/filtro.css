@@ -1,14 +1,18 @@
 body {
   background-color: grey;
 }
+#canvas{
+width: 600px;
+height: 400px;
+}
 #imagesrc {
   display:none;
 }
-
+#image1,#image2,#image3,#image4{
+  margin-left: 20%;
+  width: 200px;
+  height: 150px;
+}
 #red,#green,#blue{
   text-align: left;
-}
-.image{
-  width: 500px;
-  height: 250px;
 }

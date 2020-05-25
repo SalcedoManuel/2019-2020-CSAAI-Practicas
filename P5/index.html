@@ -4,13 +4,57 @@
     <meta charset="utf-8">
     <title>Filtro 5</title>
     <link rel="stylesheet" href="filtro.css">
-    <script src="filtro-1.js" defer></script>
+    <script src="filtro-5.js" defer></script>
   </head>
   <body>
-    <canvas id="canvas"></canvas>
-    <img src="escudo.jpg" id="imagesrc">
-    <p>Establece el umbral de rojo:</p>
-    <input type="range" id="deslizador" min="0" max="255" value="255"/>
-    <p id="range_value">00</p>
+    <table>
+      <tr>
+        <th>
+          <h1>Filtro de Ciudades</h1>
+        </th>
+      <tr>
+        <th id="LadoIzquierdo" style="width: 50%">
+          <canvas id="canvas"></canvas>
+          <img src="barcelona.jpeg" id="imagesrc">
+        </th>
+        <th id="LadoDerecho">
+          <h2>Madrid</h2>
+          <img id="image1" src="Madrid.jpg" alt="Madrid">
+          <h2>Barcelona</h2>
+          <img id="image2" src="barcelona.jpeg" alt="Barcelona">
+        </th>
+        <th id="LadoDerecho">
+          <h2>Roma</h2>
+          <img id="image3" src="roma.jpg" alt="Roma">
+          <h2>Paris</h2>
+          <img id="image4" src="paris.jpg" alt="Paris">
+        </th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>
+          <p>Establece el umbral de rojo:</p>
+          <input type="range" id="deslizador_red" min="0" max="255" value="255"/>
+          <p id="range_value_red">255</p>
+        </th>
+        <th>
+          <p>Establece el umbral de verde:</p>
+          <input type="range" id="deslizador_green" min="0" max="255" value="255"/>
+          <p id="range_value_green">255</p>
+        </th>
+        <th>
+          <p>Establece el umbral de azul:</p>
+          <input type="range" id="deslizador_blue" min="0" max="255" value="255"/>
+          <p id="range_value_blue">255</p>
+        </th>
+        <th>
+          <p>Poner el fondo gris</p>
+          <button type="button" id="boton_gris">GRIS</button>
+          <p id="grey_bool">OFF</p>
+        </th>
+      </tr>
+    </table>
+
   </body>
 </html>
