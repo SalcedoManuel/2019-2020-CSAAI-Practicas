@@ -1,5 +1,18 @@
 body {
-  background-color: grey;
+  background-color: lightblue;
+}
+h1{
+  background-color: white;
+  border-radius: 30%;
+}
+h2{
+  margin-left: 25%;
+  margin-right: 20%;
+  background-color: white;
+  border-radius: 60%;
+}
+#grease{
+  margin-left: 20px;
 }
 #canvas{
 width: 600px;
@@ -10,6 +23,7 @@ height: 400px;
 }
 #image1,#image2,#image3,#image4{
   margin-left: 20%;
+  margin-right: 30%;
   width: 200px;
   height: 150px;
 }

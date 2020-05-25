@@ -1,5 +1,4 @@
 console.log("Ejecutando JS....")
-
 //-- Obtener elementos del DOM
 const canvas = document.getElementById('canvas');
 const img = document.getElementById('imagesrc');
@@ -37,6 +36,9 @@ img.onload = function () {
 
 //-- Funcion de retrollamada del deslizador
 deslizador_red.oninput = () => {
+  if (grey_bool.innerHTML == "ON") {
+    grey_bool.innerHTML = "OFF";
+  }
   //-- Mostrar el nuevo valor del deslizador
   range_value_red.innerHTML = deslizador_red.value;
 
@@ -53,6 +55,9 @@ deslizador_red.oninput = () => {
   bucle(data,imgData);
 }
 deslizador_green.oninput = () => {
+  if (grey_bool.innerHTML == "ON") {
+    grey_bool.innerHTML = "OFF";
+  }
   //-- Mostrar el nuevo valor del deslizador
   //range_value.innerHTML = deslizador.value;
   range_value_green.innerHTML = deslizador_green.value;
@@ -68,6 +73,9 @@ deslizador_green.oninput = () => {
   bucle(data,imgData);
 }
 deslizador_blue.oninput = () => {
+  if (grey_bool.innerHTML == "ON") {
+    grey_bool.innerHTML = "OFF";
+  }
   //-- Mostrar el nuevo valor del deslizador
   //range_value.innerHTML = deslizador.value;
   range_value_blue.innerHTML = deslizador_blue.value;
@@ -137,27 +145,39 @@ function bucle(data,imgData) {
 
 image1.onclick = () => {
     img.src = image1.src;
+    restart();
     ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     ctx.putImageData(imgData, 0, 0);
 }
 image2.onclick = () => {
     img.src = image2.src
+    restart();
     ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     ctx.putImageData(imgData, 0, 0);
 }
 image3.onclick = () => {
     img.src = image3.src;
+    restart();
     ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     ctx.putImageData(imgData, 0, 0);
 }
 image4.onclick = () => {
     img.src = image4.src;
+    restart();
     ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     ctx.putImageData(imgData, 0, 0);
 }
-
+function restart() {
+  deslizador_red.value = "255";
+  range_value_red.innerHTML = deslizador_red.value;
+  deslizador_green.value = "255";
+  range_value_green.innerHTML = deslizador_green.value;
+  deslizador_blue.value = "255";
+  range_value_blue.innerHTML = deslizador_blue.value;
+  grey_bool.innerHTML = "OFF"
+}
 console.log("Fin...");
